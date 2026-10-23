@@ -243,7 +243,7 @@ const ADVICE = {
 const defang = (s) => String(s).replace(/\./g, '[.]');
 const defangDomains = (s) => String(s).replace(/[\p{L}\p{N}-]+(?:\.[\p{L}\p{N}-]+)+/gu, defang);
 
-const WELCOME = '👋 Xin chào! Mình là DomainGuard.\nHãy gửi cho mình địa chỉ website hoặc đường link bạn nghi ngờ, ví dụ: amaz0n[.]com\nMình sẽ kiểm tra xem tên miền có dấu hiệu giả mạo hay không.\n\nℹ️ Mình chỉ phân tích địa chỉ, không mở trang web và không kết luận website an toàn hay không.';
+const WELCOME = '👋 Xin chào! Mình là DomainGuard.\nHãy gửi cho mình địa chỉ website hoặc đường link bạn nghi ngờ, ví dụ: amaz0n[.]com\nMình sẽ kiểm tra xem tên miền có dấu hiệu giả mạo hay không.\n\nℹ️ Mình sẽ phân tích địa chỉ website giúp bạn mà không cần phải mở trang web.';
 const NON_TEXT = '🤔 Mình chưa đọc được loại tin nhắn này (ví dụ ảnh, sticker hoặc tin chuyển tiếp dạng thẻ link).\nHãy sao chép địa chỉ website rồi dán vào tin nhắn chữ nhé.';
 const TOO_FAST = '⏳ Bạn gửi hơi nhanh. Vui lòng thử lại sau ít phút.';
 const FOOTER = 'ℹ️ DomainGuard chỉ phân tích hình thức tên miền, không mở trang web.';
