@@ -2,7 +2,7 @@
   "total": 5000,
   "refreshHours": 24,
   "sources": {
-    "cloudflareVN": { "enabled": true, "take": 2000, "location": "VN", "rankingType": "POPULAR" },
+    "cloudflareVN": { "enabled": true, "take": 100, "location": "VN", "rankingType": "POPULAR" },
     "tranco": { "enabled": true, "take": 3000, "downloadRows": 6000 }
   },
   "port": 3000
