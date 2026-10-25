@@ -1,0 +1,33 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "reports": {
+      "$domainKey": {
+        ".read": true,
+        "$uid": {
+          ".write": "auth != null && $uid === auth.uid && (!newData.exists() || root.child('reportLocks').child($domainKey).child(root.child('userReports').child(auth.uid).child($domainKey).child('deviceKey').val()).child('uid').val() === auth.uid)",
+          ".validate": "newData.hasChildren(['uid','domain','reason','createdAt']) && newData.child('uid').val() === auth.uid && newData.child('domain').isString() && newData.child('domain').val().length > 2 && newData.child('domain').val().length <= 253 && newData.child('reason').isString() && (newData.child('reason').val() === 'impersonation' || newData.child('reason').val() === 'credential_theft' || newData.child('reason').val() === 'investment_scam' || newData.child('reason').val() === 'malware' || newData.child('reason').val() === 'other') && newData.child('createdAt').isNumber() && newData.child('createdAt').val() <= now + 60000 && newData.child('createdAt').val() >= now - 86400000"
+        }
+      }
+    },
+    "reportLocks": {
+      "$domainKey": {
+        "$deviceKey": {
+          ".read": true,
+          ".write": "auth != null && ((!data.exists() && newData.child('uid').val() === auth.uid) || (data.child('uid').val() === auth.uid && !newData.exists() && !root.child('reports').child($domainKey).child(auth.uid).exists()))",
+          ".validate": "newData.hasChildren(['uid','createdAt']) && newData.child('uid').val() === auth.uid && newData.child('createdAt').isNumber() && newData.child('createdAt').val() <= now + 60000 && newData.child('createdAt').val() >= now - 86400000"
+        }
+      }
+    },
+    "userReports": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid",
+        "$domainKey": {
+          ".validate": "newData.hasChildren(['deviceKey','createdAt']) && newData.child('deviceKey').isString() && newData.child('deviceKey').val().length >= 40 && newData.child('deviceKey').val().length <= 64 && newData.child('createdAt').isNumber()"
+        }
+      }
+    }
+  }
+}
