@@ -77,3 +77,35 @@ Không tự đoán URL. Website dùng `public/firebase-config.js`; bot dùng bi�
 - Khi kết quả màu xanh, trang hiển thị thông tin đăng ký công khai (chủ sở hữu nếu có, nhà đăng ký, ngày đăng ký, hết hạn) lấy từ RDAP qua `/api/domain-info`. Nhiều tên miền ẩn chủ sở hữu; một số đuôi có thể không có dữ liệu RDAP.
 - Biến môi trường tuỳ chọn: `RDAP_API_BASE` (mặc định https://rdap.org/).
 - Kiểm thử: `node test/community.test.js` và `node test/device-lock.test.js` (mô phỏng, không thay thế thử trên Firebase thật).
+### Danh sách đen (blacklist) miễn phí (v0.6)
+
+Máy chủ tải sẵn các danh sách đen về `data/blacklist.json` và tra cứu **ngay trên máy chủ**: địa chỉ người dùng nhập **không** bị gửi cho bên thứ 3.
+Nếu địa chỉ có trong danh sách đen, kết quả luôn là **🚨 đỏ** (trên web và bot Zalo), kèm tên nguồn và hướng dẫn xử lý.
+
+| Nguồn | Loại | Cần đăng ký | Cập nhật nguồn | Ghi chú |
+|---|---|---|---|---|
+| OpenPhish Community | URL lừa đảo | Không | ~12 giờ | Chỉ dùng phi thương mại |
+| Phishing.Database (ACTIVE) | Tên miền lừa đảo | Không | Vài giờ | Danh sách lớn, đã lọc các dòng lỗi (vd `com`) |
+| URLhaus (abuse.ch) | URL mã độc | Auth-Key miễn phí | 5 phút | Chỉ bật khi có `URLHAUS_AUTH_KEY` |
+
+#### Bật URLhaus (tuỳ chọn)
+1. Đăng ký tài khoản tại abuse.ch Authentication Portal và tạo Auth-Key.
+2. Render > Environment: thêm `URLHAUS_AUTH_KEY=<key>`, rồi deploy lại.
+Key không bao giờ xuất hiện trong log (đã được che).
+
+#### Cấu hình (`config/sources.json` > `blacklist`)
+- `refreshHours`: chu kỳ tải lại (mặc định 6 giờ).
+- `maxPerFeed`: số dòng tối đa mỗi nguồn (giới hạn RAM; mặc định 300.000).
+- `feeds`: đặt `false` để tắt từng nguồn.
+
+#### Chống cảnh báo nhầm
+- Dịch vụ lưu trữ dùng chung (github.io, sites.google.com, pages.dev, vercel.app, bit.ly...) **không** bị gắn cờ cả tên miền, chỉ gắn cờ đúng subdomain/URL bị liệt kê.
+- Tên miền trong danh sách tham chiếu (thương hiệu bảo vệ + Tranco/Cloudflare) chỉ bị gắn cờ khi **đúng URL** nằm trong danh sách đen.
+- Nguồn nào tải lỗi thì giữ dữ liệu cũ của nguồn đó.
+
+#### API mới
+- `GET /api/blacklist?url=<địa chỉ>` → `{ listed, matches:[{type:'url'|'host', value, sources}], sources, updatedAt }`
+- `GET /api/domains` có thêm trường `blacklist` (trạng thái từng nguồn).
+
+#### Kiểm thử
+`node test/blacklist.test.js` (offline, không cần mạng)
