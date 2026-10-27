@@ -28,6 +28,16 @@
           ".validate": "newData.hasChildren(['deviceKey','createdAt']) && newData.child('deviceKey').isString() && newData.child('deviceKey').val().length >= 40 && newData.child('deviceKey').val().length <= 64 && newData.child('createdAt').isNumber()"
         }
       }
+    },
+    "allowlist": { ".read": true, ".write": false },
+    "falsePositives": {
+    ".read": false,
+    "$domain": {
+      "$uid": {
+        ".write": "auth != null && auth.uid === $uid",
+        ".validate": "newData.hasChildren(['uid','domain','createdAt']) && newData.child('uid').val() === auth.uid && newData.child('domain').isString() && newData.child('domain').val().length <= 253"
+       }
+      }
     }
   }
 }
