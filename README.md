@@ -109,3 +109,71 @@ Key không bao giờ xuất hiện trong log (đã được che).
 
 #### Kiểm thử
 `node test/blacklist.test.js` (offline, không cần mạng)
+## DomainGuard v0.8 – Bản dùng chính thức (nâng cấp từ v0.6)
+
+### Cách cập nhật
+**Chép đè** các file dưới đây vào project v0.6 (KHÔNG xoá cả thư mục, vì gói này không có `firebase-config.js`, `database.rules.json`, `protected_brands.json`...).
+Sau đó chạy lại toàn bộ test cũ (`test/run.js`, `community.test.js`, `device-lock.test.js`) và test mới.
+
+| File | Thay đổi |
+|---|---|
+| `public/detector.js` | Hàm `decide()` – **nơi duy nhất quyết định màu**, web và bot dùng chung |
+| `public/brand_rules.json` (mới) | Nguồn duy nhất cho tên miền chính thức (server tự đưa vào danh sách bảo vệ) |
+| `public/app.js`, `public/index.html` | Dùng `decide()`; nút "Báo nhầm"; phiên bản `app.js v8` |
+| `server.js` | Dùng `decide()`; allowlist; giới hạn gọi API; chế độ log/warn chung |
+| `blacklist.js` | Phân mức nguồn; bỏ tin tuyệt đối với tên miền phổ biến |
+| `config/allowlist.json` (mới) | Tên miền quản trị viên đã xác nhận hợp pháp |
+| `test/brand.test.js`, `test/blacklist.test.js`, `test/brand-eval.js` | Kiểm thử và đo chất lượng |
+
+### Bảng quyết định màu
+| Mức | Điều kiện |
+|---|---|
+| 🔴 Đỏ | Giả dạng ký tự/Unicode · OpenPhish hoặc URLhaus (hoặc ≥ 2 nguồn) · Thương hiệu **mạnh** + (tên miền < 30 ngày, hoặc ≥ 3 báo cáo, hoặc có trong bất kỳ danh sách đen nào) |
+| 🟡 Vàng | Thương hiệu mạnh · Chỉ Phishing.Database · Lệch 1 ký tự / cùng tên khác đuôi · ≥ 1 báo cáo · Thương hiệu **yếu** thuộc ngân hàng/ví/nhà nước |
+| ℹ️ Xanh + ghi chú | Thương hiệu yếu nhóm khác · Tên miền phổ biến (Tranco/Cloudflare) có chứa thương hiệu |
+| 🟢 Xanh | Không có dấu hiệu |
+
+- **Mạnh** = tên thương hiệu (đúng/thay ký tự/viết liền) + từ khoá nhạy cảm, hoặc chứa nguyên tên miền chính thức ở phần đầu (`facebook.com.login-verify.xyz`). Lệch 1 ký tự chỉ xét khi có từ khoá.
+- Chữ "giả mạo" chỉ dùng cho danh sách đen và giả dạng ký tự.
+
+### Danh sách đen
+- Tên miền chính thức: chỉ cảnh báo khi khớp **đúng URL**.
+- Tên miền phổ biến (Tranco/Cloudflare): khớp theo tên miền cần **≥ 2 nguồn** (không còn bỏ qua hoàn toàn).
+- `URLHAUS_AUTH_KEY` (tuỳ chọn) để bật URLhaus.
+
+### Biến môi trường mới (Render)
+| Biến | Ý nghĩa |
+|---|---|
+| `BRAND_MODE` | `warn` (mặc định) hoặc `log` – áp dụng **cả web và bot** |
+| `API_RATE_LIMIT` | Số lần gọi `/api/blacklist`, `/api/domain-info`, `/api/brand-log` mỗi phút/IP (mặc định 60) |
+
+### Firebase – BẮT BUỘC cập nhật Rules
+Thêm 2 nhánh sau vào `database.rules.json` (bên trong `"rules"`), rồi dán vào Firebase Console > Realtime Database > Rules > Publish:
+```json
+"allowlist": { ".read": true, ".write": false },
+"falsePositives": {
+  ".read": false,
+  "$domain": {
+    "$uid": {
+      ".write": "auth != null && auth.uid === $uid",
+      ".validate": "newData.hasChildren(['uid','domain','createdAt']) && newData.child('uid').val() === auth.uid && newData.child('domain').isString() && newData.child('domain').val().length <= 253"
+    }
+  }
+}
+```
+- **Gỡ cảnh báo không cần deploy:** Firebase Console > `allowlist` > thêm khoá là tên miền **thay dấu chấm bằng dấu phẩy** (vd `paypal-community,com`) = `true`. Server cập nhật sau tối đa 5 phút.
+- **Xem phản hồi "Báo nhầm":** Firebase Console > `falsePositives` (chỉ quản trị viên đọc được).
+
+### Duy trì bộ luật thương hiệu
+- **Chỉ thêm tên miền vào `official` khi đã xác minh** (tinnhiemmang.vn, trang chủ/ứng dụng chính thức). Thêm nhầm tên miền của kẻ gian sẽ làm DomainGuard bỏ qua cảnh báo.
+- Điền `checkedAt` sau khi đối chiếu. Ưu tiên nhóm `bank`, `payment`, `gov`.
+- Báo nhầm lặp lại: thêm vào `official` (nếu là của thương hiệu), `strict: true`, `stopwords`, hoặc allowlist.
+
+### Vận hành
+- Mỗi tuần: `node test/brand-eval.js` (mục tiêu báo nhầm < 0,5%) và xem `falsePositives`.
+- Log Render khi khởi động: `[brand] Bộ luật thương hiệu: 127 thương hiệu, chế độ warn`, `[allowlist] N tên miền`, `[blacklist] Xong: ...`.
+- Render gói miễn phí: sau mỗi lần ngủ/khởi động lại, danh sách đen tải lại vài phút; trong thời gian đó kết quả ghi "chưa kiểm tra được danh sách đen".
+- OpenPhish Community chỉ cho phép dùng **phi thương mại**.
+
+### Kiểm thử
+`node test/brand.test.js` · `node test/blacklist.test.js` · `node test/brand-eval.js`
