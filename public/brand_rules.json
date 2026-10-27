@@ -1,0 +1,2281 @@
+{
+ "_note": "Bo luat thuong hieu - NGUON DUY NHAT cho ten mien chinh thuc (server tu dua vao danh sach bao ve). official: ten mien chinh thuc. strict=true: ten ngan/de trung, chi xet khi co tu khoa nhay cam. sensitiveCategories: nhom ma ca dau hieu yeu cung canh bao vang. verifiedBy/checkedAt: nguon xac minh - muc 'tu tong hop' can doi chieu tinnhiemmang.vn/trang chu roi dien checkedAt. mode: 'warn' | 'log' (bien moi truong BRAND_MODE tren Render ghi de, ap dung cho ca web va bot). QUY TAC: chi them ten mien vao official khi DA XAC MINH (tinnhiemmang.vn, trang chu/ung dung chinh thuc). Them nham ten mien cua ke gian vao day se lam DomainGuard bo qua canh bao.",
+ "version": "2026-10-28",
+ "mode": "warn",
+ "minEmbedLength": 8,
+ "minNearLength": 5,
+ "strongNearMinLength": 7,
+ "communityRedThreshold": 3,
+ "newDomainDays": 30,
+ "sensitiveCategories": [
+  "bank",
+  "payment",
+  "gov"
+ ],
+ "keywords": [
+  "login",
+  "signin",
+  "signon",
+  "logon",
+  "verify",
+  "verification",
+  "verified",
+  "secure",
+  "security",
+  "support",
+  "account",
+  "accounts",
+  "wallet",
+  "payment",
+  "pay",
+  "billing",
+  "otp",
+  "recovery",
+  "recover",
+  "update",
+  "confirm",
+  "unlock",
+  "unblock",
+  "suspend",
+  "suspended",
+  "reset",
+  "password",
+  "auth",
+  "helpdesk",
+  "service",
+  "services",
+  "customer",
+  "refund",
+  "reward",
+  "rewards",
+  "gift",
+  "bonus",
+  "promo",
+  "claim",
+  "online",
+  "ebanking",
+  "ibanking",
+  "banking",
+  "mobile",
+  "appeal",
+  "policy",
+  "copyright",
+  "checkpoint",
+  "dangnhap",
+  "xacminh",
+  "xacthuc",
+  "baomat",
+  "taikhoan",
+  "hotro",
+  "cskh",
+  "khuyenmai",
+  "nhanqua",
+  "quatang",
+  "trungthuong",
+  "hoantien",
+  "uudai",
+  "tangqua",
+  "vayvon",
+  "vaytien",
+  "giaingan",
+  "nangcap",
+  "capnhat",
+  "khoataikhoan",
+  "mokhoa"
+ ],
+ "stopwords": [
+  "finance",
+  "pagoda",
+  "canvas",
+  "booking",
+  "bookings",
+  "applet",
+  "metal",
+  "metro",
+  "cakes",
+  "wisely",
+  "grabs",
+  "shopper",
+  "shopping",
+  "sender",
+  "tinder",
+  "binary",
+  "vincent",
+  "thread",
+  "threads",
+  "official",
+  "vietnam",
+  "saigon",
+  "hanoi",
+  "yahooo"
+ ],
+ "sharedHosts": [
+  "github.io",
+  "pages.dev",
+  "workers.dev",
+  "netlify.app",
+  "vercel.app",
+  "web.app",
+  "firebaseapp.com",
+  "weebly.com",
+  "wixsite.com",
+  "blogspot.com",
+  "000webhostapp.com",
+  "herokuapp.com",
+  "glitch.me",
+  "replit.app",
+  "onrender.com",
+  "azurewebsites.net",
+  "appspot.com",
+  "r2.dev",
+  "webflow.io",
+  "square.site",
+  "godaddysites.com",
+  "ngrok-free.app",
+  "ngrok.io",
+  "trycloudflare.com",
+  "duckdns.org"
+ ],
+ "brands": {
+  "vietcombank": {
+   "name": "Vietcombank",
+   "category": "bank",
+   "official": [
+    "vietcombank.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "bidv": {
+   "name": "BIDV",
+   "category": "bank",
+   "official": [
+    "bidv.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "vietinbank": {
+   "name": "VietinBank",
+   "category": "bank",
+   "official": [
+    "vietinbank.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "agribank": {
+   "name": "Agribank",
+   "category": "bank",
+   "official": [
+    "agribank.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "techcombank": {
+   "name": "Techcombank",
+   "category": "bank",
+   "official": [
+    "techcombank.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "mbbank": {
+   "name": "MB Bank",
+   "category": "bank",
+   "official": [
+    "mbbank.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "vpbank": {
+   "name": "VPBank",
+   "category": "bank",
+   "official": [
+    "vpbank.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "acb": {
+   "name": "ACB",
+   "category": "bank",
+   "official": [
+    "acb.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "sacombank": {
+   "name": "Sacombank",
+   "category": "bank",
+   "official": [
+    "sacombank.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "tpbank": {
+   "name": "TPBank",
+   "category": "bank",
+   "official": [
+    "tpbank.com.vn",
+    "tpb.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "hdbank": {
+   "name": "HDBank",
+   "category": "bank",
+   "official": [
+    "hdbank.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "vib": {
+   "name": "VIB",
+   "category": "bank",
+   "official": [
+    "vib.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "shb": {
+   "name": "SHB",
+   "category": "bank",
+   "official": [
+    "shb.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "ocb": {
+   "name": "OCB",
+   "category": "bank",
+   "official": [
+    "ocb.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "msb": {
+   "name": "MSB",
+   "category": "bank",
+   "official": [
+    "msb.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "seabank": {
+   "name": "SeABank",
+   "category": "bank",
+   "official": [
+    "seabank.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "scb": {
+   "name": "SCB",
+   "category": "bank",
+   "official": [
+    "scb.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "eximbank": {
+   "name": "Eximbank",
+   "category": "bank",
+   "official": [
+    "eximbank.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "lpbank": {
+   "name": "LPBank",
+   "category": "bank",
+   "official": [
+    "lpbank.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "abbank": {
+   "name": "ABBANK",
+   "category": "bank",
+   "official": [
+    "abbank.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "vietbank": {
+   "name": "Vietbank",
+   "category": "bank",
+   "official": [
+    "vietbank.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "namabank": {
+   "name": "Nam A Bank",
+   "category": "bank",
+   "official": [
+    "namabank.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "baovietbank": {
+   "name": "BaoViet Bank",
+   "category": "bank",
+   "official": [
+    "baovietbank.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "pvcombank": {
+   "name": "PVcomBank",
+   "category": "bank",
+   "official": [
+    "pvcombank.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "bacabank": {
+   "name": "BAC A BANK",
+   "category": "bank",
+   "official": [
+    "baca-bank.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "vietabank": {
+   "name": "VietABank",
+   "category": "bank",
+   "official": [
+    "vietabank.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "kienlongbank": {
+   "name": "KienlongBank",
+   "category": "bank",
+   "official": [
+    "kienlongbank.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "ncb": {
+   "name": "NCB",
+   "category": "bank",
+   "official": [
+    "ncb-bank.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "shinhan": {
+   "name": "Shinhan Bank",
+   "category": "bank",
+   "official": [
+    "shinhan.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "woori": {
+   "name": "Woori Bank",
+   "category": "bank",
+   "official": [
+    "woori.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "hsbc": {
+   "name": "HSBC",
+   "category": "bank",
+   "official": [
+    "hsbc.com",
+    "hsbc.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "standardchartered": {
+   "name": "Standard Chartered",
+   "category": "bank",
+   "official": [
+    "standardchartered.com.vn",
+    "sc.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "uob": {
+   "name": "UOB",
+   "category": "bank",
+   "official": [
+    "uob.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "cimb": {
+   "name": "CIMB",
+   "category": "bank",
+   "official": [
+    "cimbbank.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "cake": {
+   "name": "Cake by VPBank",
+   "category": "bank",
+   "official": [
+    "cake.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "tnex": {
+   "name": "TNEX",
+   "category": "bank",
+   "official": [
+    "tnex.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "momo": {
+   "name": "MoMo",
+   "category": "payment",
+   "official": [
+    "momo.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "zalopay": {
+   "name": "ZaloPay",
+   "category": "payment",
+   "official": [
+    "zalopay.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "vnpay": {
+   "name": "VNPAY",
+   "category": "payment",
+   "official": [],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "viettelmoney": {
+   "name": "Viettel Money",
+   "category": "payment",
+   "official": [
+    "viettelmoney.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "paypal": {
+   "name": "PayPal",
+   "category": "payment",
+   "official": [
+    "paypal.com",
+    "paypal.me",
+    "paypalobjects.com",
+    "braintreegateway.com",
+    "paypal-community.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "wise": {
+   "name": "Wise",
+   "category": "payment",
+   "official": [
+    "wise.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "binance": {
+   "name": "Binance",
+   "category": "payment",
+   "official": [
+    "binance.com",
+    "binance.us",
+    "binance.vision",
+    "bnbstatic.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "ssi": {
+   "name": "SSI",
+   "category": "payment",
+   "official": [
+    "ssi.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "vndirect": {
+   "name": "VNDIRECT",
+   "category": "payment",
+   "official": [
+    "vndirect.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "tcbs": {
+   "name": "TCBS",
+   "category": "payment",
+   "official": [
+    "tcbs.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "miraeasset": {
+   "name": "Mirae Asset",
+   "category": "payment",
+   "official": [
+    "miraeasset.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "shopee": {
+   "name": "Shopee",
+   "category": "commerce",
+   "official": [
+    "shopee.com",
+    "shopee.vn",
+    "shopee.ph",
+    "shopee.sg",
+    "shopee.tw",
+    "shopee.co.id",
+    "shopee.co.th",
+    "shopee.com.br",
+    "shopee.com.my",
+    "shp.ee",
+    "shopeemobile.com",
+    "susercontent.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "lazada": {
+   "name": "Lazada",
+   "category": "commerce",
+   "official": [
+    "lazada.com",
+    "lazada.vn",
+    "lazada.sg",
+    "lazada.co.id",
+    "lazada.co.th",
+    "lazada.com.my",
+    "lazada.com.ph",
+    "lazcdn.com",
+    "slatic.net"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "tiki": {
+   "name": "Tiki",
+   "category": "commerce",
+   "official": [
+    "tiki.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "sendo": {
+   "name": "Sendo",
+   "category": "commerce",
+   "official": [
+    "sendo.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "chotot": {
+   "name": "Chợ Tốt",
+   "category": "commerce",
+   "official": [
+    "chotot.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "thegioididong": {
+   "name": "Thế Giới Di Động",
+   "category": "commerce",
+   "official": [
+    "thegioididong.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "dienmayxanh": {
+   "name": "Điện Máy Xanh",
+   "category": "commerce",
+   "official": [
+    "dienmayxanh.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "fptshop": {
+   "name": "FPT Shop",
+   "category": "commerce",
+   "official": [
+    "fptshop.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "cellphones": {
+   "name": "CellphoneS",
+   "category": "commerce",
+   "official": [
+    "cellphones.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "bachhoaxanh": {
+   "name": "Bách Hóa Xanh",
+   "category": "commerce",
+   "official": [
+    "bachhoaxanh.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "nguyenkim": {
+   "name": "Nguyễn Kim",
+   "category": "commerce",
+   "official": [
+    "nguyenkim.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "longchau": {
+   "name": "Nhà thuốc Long Châu",
+   "category": "commerce",
+   "official": [
+    "longchau.com.vn",
+    "nhathuoclongchau.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "pharmacity": {
+   "name": "Pharmacity",
+   "category": "commerce",
+   "official": [
+    "pharmacity.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "hasaki": {
+   "name": "Hasaki",
+   "category": "commerce",
+   "official": [
+    "hasaki.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "ghn": {
+   "name": "Giao Hàng Nhanh",
+   "category": "commerce",
+   "official": [
+    "ghn.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "giaohangtietkiem": {
+   "name": "Giao Hàng Tiết Kiệm",
+   "category": "commerce",
+   "official": [
+    "giaohangtietkiem.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "viettelpost": {
+   "name": "Viettel Post",
+   "category": "commerce",
+   "official": [
+    "viettelpost.com.vn",
+    "viettelpost.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "vnpost": {
+   "name": "VNPost",
+   "category": "commerce",
+   "official": [
+    "vnpost.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "jtexpress": {
+   "name": "J&T Express",
+   "category": "commerce",
+   "official": [
+    "jtexpress.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "ahamove": {
+   "name": "Ahamove",
+   "category": "commerce",
+   "official": [
+    "ahamove.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "grab": {
+   "name": "Grab",
+   "category": "commerce",
+   "official": [
+    "grab.com",
+    "grabtaxi.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "xanhsm": {
+   "name": "Xanh SM",
+   "category": "commerce",
+   "official": [
+    "xanhsm.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "vietnamairlines": {
+   "name": "Vietnam Airlines",
+   "category": "commerce",
+   "official": [
+    "vietnamairlines.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "vietjet": {
+   "name": "Vietjet Air",
+   "category": "commerce",
+   "official": [
+    "vietjetair.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "bambooairways": {
+   "name": "Bamboo Airways",
+   "category": "commerce",
+   "official": [
+    "bambooairways.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "traveloka": {
+   "name": "Traveloka",
+   "category": "commerce",
+   "official": [
+    "traveloka.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "booking": {
+   "name": "Booking.com",
+   "category": "commerce",
+   "official": [
+    "booking.com",
+    "bstatic.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "agoda": {
+   "name": "Agoda",
+   "category": "commerce",
+   "official": [
+    "agoda.com",
+    "agoda.net"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "amazon": {
+   "name": "Amazon",
+   "category": "commerce",
+   "official": [
+    "amazon.com",
+    "amazon.ae",
+    "amazon.ca",
+    "amazon.de",
+    "amazon.es",
+    "amazon.fr",
+    "amazon.in",
+    "amazon.it",
+    "amazon.nl",
+    "amazon.pl",
+    "amazon.sa",
+    "amazon.se",
+    "amazon.sg",
+    "amazon.co.jp",
+    "amazon.co.uk",
+    "amazon.com.au",
+    "amazon.com.br",
+    "amazon.com.mx",
+    "amazon.com.tr",
+    "amzn.to",
+    "kindle.com",
+    "audible.com",
+    "amazonaws.com",
+    "aws.amazon.com",
+    "primevideo.com",
+    "media-amazon.com",
+    "amazon-adsystem.com",
+    "ssl-images-amazon.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "ebay": {
+   "name": "eBay",
+   "category": "commerce",
+   "official": [
+    "ebay.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "viettel": {
+   "name": "Viettel",
+   "category": "vn-corp",
+   "official": [
+    "viettel.com.vn",
+    "viettel.vn",
+    "tv360.vn",
+    "myviettel.vn",
+    "viettelmoney.vn",
+    "viettelstore.vn",
+    "vietteltelecom.vn",
+    "viettelpost.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "vnpt": {
+   "name": "VNPT",
+   "category": "vn-corp",
+   "official": [
+    "vnpt.com.vn",
+    "vnpt.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "vinaphone": {
+   "name": "VinaPhone",
+   "category": "vn-corp",
+   "official": [
+    "vinaphone.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "mobifone": {
+   "name": "MobiFone",
+   "category": "vn-corp",
+   "official": [
+    "mobifone.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "fpt": {
+   "name": "FPT",
+   "category": "vn-corp",
+   "official": [
+    "fpt.com",
+    "fpt.vn",
+    "fpt.edu.vn",
+    "fptplay.vn",
+    "fptcloud.com",
+    "fptshop.com.vn",
+    "fpt-software.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "evn": {
+   "name": "EVN",
+   "category": "vn-corp",
+   "official": [
+    "evn.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "vingroup": {
+   "name": "Vingroup",
+   "category": "vn-corp",
+   "official": [
+    "vingroup.net"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "vinfast": {
+   "name": "VinFast",
+   "category": "vn-corp",
+   "official": [
+    "vinfast.vn",
+    "vinfastauto.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "vinhomes": {
+   "name": "Vinhomes",
+   "category": "vn-corp",
+   "official": [
+    "vinhomes.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "vinmec": {
+   "name": "Vinmec",
+   "category": "vn-corp",
+   "official": [
+    "vinmec.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "vinpearl": {
+   "name": "Vinpearl",
+   "category": "vn-corp",
+   "official": [
+    "vinpearl.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "vincom": {
+   "name": "Vincom",
+   "category": "vn-corp",
+   "official": [
+    "vincom.com",
+    "vincom.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "petrolimex": {
+   "name": "Petrolimex",
+   "category": "vn-corp",
+   "official": [
+    "petrolimex.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "pnj": {
+   "name": "PNJ",
+   "category": "vn-corp",
+   "official": [
+    "pnj.com.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "doji": {
+   "name": "DOJI",
+   "category": "vn-corp",
+   "official": [
+    "doji.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "dichvucong": {
+   "name": "Cổng Dịch vụ công Quốc gia",
+   "category": "gov",
+   "official": [
+    "dichvucong.gov.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "vneid": {
+   "name": "VNeID",
+   "category": "gov",
+   "official": [
+    "vneid.gov.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "baohiemxahoi": {
+   "name": "Bảo hiểm xã hội Việt Nam",
+   "category": "gov",
+   "official": [
+    "baohiemxahoi.gov.vn",
+    "vss.gov.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "aliases": [
+    "bhxh"
+   ]
+  },
+  "thuedientu": {
+   "name": "Thuế điện tử",
+   "category": "gov",
+   "official": [
+    "gdt.gov.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "aliases": [
+    "tongcucthue"
+   ]
+  },
+  "chinhphu": {
+   "name": "Cổng thông tin Chính phủ",
+   "category": "gov",
+   "official": [
+    "chinhphu.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "bocongan": {
+   "name": "Bộ Công an",
+   "category": "gov",
+   "official": [
+    "bocongan.gov.vn",
+    "mps.gov.vn"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "google": {
+   "name": "Google",
+   "category": "global",
+   "official": [
+    "google.com",
+    "google.com.vn",
+    "google.ad",
+    "google.ae",
+    "google.al",
+    "google.am",
+    "google.as",
+    "google.at",
+    "google.az",
+    "google.ba",
+    "google.be",
+    "google.bf",
+    "google.bg",
+    "google.bi",
+    "google.bj",
+    "google.bs",
+    "google.bt",
+    "google.by",
+    "google.ca",
+    "google.cd",
+    "google.cf",
+    "google.cg",
+    "google.ch",
+    "google.ci",
+    "google.cl",
+    "google.cm",
+    "google.cn",
+    "google.cv",
+    "google.cz",
+    "google.de",
+    "google.dj",
+    "google.dk",
+    "google.dm",
+    "google.dz",
+    "google.ee",
+    "google.es",
+    "google.fi",
+    "google.fm",
+    "google.fr",
+    "google.ga",
+    "google.ge",
+    "google.gg",
+    "google.gl",
+    "google.gm",
+    "google.gr",
+    "google.gy",
+    "google.hn",
+    "google.hr",
+    "google.ht",
+    "google.hu",
+    "google.ie",
+    "google.im",
+    "google.iq",
+    "google.is",
+    "google.it",
+    "google.je",
+    "google.jo",
+    "google.kg",
+    "google.ki",
+    "google.kz",
+    "google.la",
+    "google.li",
+    "google.lk",
+    "google.lt",
+    "google.lu",
+    "google.lv",
+    "google.md",
+    "google.me",
+    "google.mg",
+    "google.mk",
+    "google.ml",
+    "google.mn",
+    "google.mu",
+    "google.mv",
+    "google.mw",
+    "google.ne",
+    "google.nl",
+    "google.no",
+    "google.nr",
+    "google.nu",
+    "google.pl",
+    "google.pn",
+    "google.ps",
+    "google.pt",
+    "google.ro",
+    "google.rs",
+    "google.ru",
+    "google.rw",
+    "google.sc",
+    "google.se",
+    "google.sh",
+    "google.si",
+    "google.sk",
+    "google.sm",
+    "google.sn",
+    "google.so",
+    "google.sr",
+    "google.st",
+    "google.td",
+    "google.tg",
+    "google.tl",
+    "google.tm",
+    "google.tn",
+    "google.to",
+    "google.tt",
+    "google.vu",
+    "google.ws",
+    "google.cat",
+    "google.dev",
+    "google.co.ao",
+    "google.co.bw",
+    "google.co.ck",
+    "google.co.cr",
+    "google.co.id",
+    "google.co.il",
+    "google.co.in",
+    "google.co.jp",
+    "google.co.ke",
+    "google.co.kr",
+    "google.co.ls",
+    "google.co.ma",
+    "google.co.mz",
+    "google.co.nz",
+    "google.co.th",
+    "google.co.tz",
+    "google.co.ug",
+    "google.co.uk",
+    "google.co.uz",
+    "google.co.ve",
+    "google.co.vi",
+    "google.co.za",
+    "google.co.zm",
+    "google.co.zw",
+    "google.com.af",
+    "google.com.ag",
+    "google.com.ar",
+    "google.com.au",
+    "google.com.bd",
+    "google.com.bh",
+    "google.com.bn",
+    "google.com.bo",
+    "google.com.br",
+    "google.com.bz",
+    "google.com.co",
+    "google.com.cu",
+    "google.com.cy",
+    "google.com.do",
+    "google.com.ec",
+    "google.com.eg",
+    "google.com.et",
+    "google.com.fj",
+    "google.com.gh",
+    "google.com.gi",
+    "google.com.gt",
+    "google.com.hk",
+    "google.com.jm",
+    "google.com.kh",
+    "google.com.kw",
+    "google.com.lb",
+    "google.com.ly",
+    "google.com.mm",
+    "google.com.mt",
+    "google.com.mx",
+    "google.com.my",
+    "google.com.na",
+    "google.com.ng",
+    "google.com.ni",
+    "google.com.np",
+    "google.com.om",
+    "google.com.pa",
+    "google.com.pe",
+    "google.com.pg",
+    "google.com.ph",
+    "google.com.pk",
+    "google.com.pr",
+    "google.com.py",
+    "google.com.qa",
+    "google.com.sa",
+    "google.com.sb",
+    "google.com.sg",
+    "google.com.sl",
+    "google.com.sv",
+    "google.com.tj",
+    "google.com.tr",
+    "google.com.tw",
+    "google.com.ua",
+    "google.com.uy",
+    "google.com.vc",
+    "g.co",
+    "goo.gl",
+    "web.dev",
+    "youtu.be",
+    "ggpht.com",
+    "gmail.com",
+    "ytimg.com",
+    "android.com",
+    "blogger.com",
+    "gstatic.com",
+    "youtube.com",
+    "googleapis.com",
+    "googleblog.com",
+    "googlemail.com",
+    "withgoogle.com",
+    "googlevideo.com",
+    "google-analytics.com",
+    "googleadservices.com",
+    "googletagmanager.com",
+    "youtube-nocookie.com",
+    "googlesyndication.com",
+    "googleusercontent.com"
+   ],
+   "verifiedBy": "google.com/supported_domains + tự tổng hợp",
+   "checkedAt": null
+  },
+  "gmail": {
+   "name": "Gmail (Google)",
+   "category": "global",
+   "official": [
+    "gmail.com",
+    "google.com",
+    "g.co",
+    "goo.gl",
+    "web.dev",
+    "youtu.be",
+    "ggpht.com",
+    "google.ad",
+    "google.ae",
+    "google.al",
+    "google.am",
+    "google.as",
+    "google.at",
+    "google.az",
+    "google.ba",
+    "google.be",
+    "google.bf",
+    "google.bg",
+    "google.bi",
+    "google.bj",
+    "google.bs",
+    "google.bt",
+    "google.by",
+    "google.ca",
+    "google.cd",
+    "google.cf",
+    "google.cg",
+    "google.ch",
+    "google.ci",
+    "google.cl",
+    "google.cm",
+    "google.cn",
+    "google.cv",
+    "google.cz",
+    "google.de",
+    "google.dj",
+    "google.dk",
+    "google.dm",
+    "google.dz",
+    "google.ee",
+    "google.es",
+    "google.fi",
+    "google.fm",
+    "google.fr",
+    "google.ga",
+    "google.ge",
+    "google.gg",
+    "google.gl",
+    "google.gm",
+    "google.gr",
+    "google.gy",
+    "google.hn",
+    "google.hr",
+    "google.ht",
+    "google.hu",
+    "google.ie",
+    "google.im",
+    "google.iq",
+    "google.is",
+    "google.it",
+    "google.je",
+    "google.jo",
+    "google.kg",
+    "google.ki",
+    "google.kz",
+    "google.la",
+    "google.li",
+    "google.lk",
+    "google.lt",
+    "google.lu",
+    "google.lv",
+    "google.md",
+    "google.me",
+    "google.mg",
+    "google.mk",
+    "google.ml",
+    "google.mn",
+    "google.mu",
+    "google.mv",
+    "google.mw",
+    "google.ne",
+    "google.nl",
+    "google.no",
+    "google.nr",
+    "google.nu",
+    "google.pl",
+    "google.pn",
+    "google.ps",
+    "google.pt",
+    "google.ro",
+    "google.rs",
+    "google.ru",
+    "google.rw",
+    "google.sc",
+    "google.se",
+    "google.sh",
+    "google.si",
+    "google.sk",
+    "google.sm",
+    "google.sn",
+    "google.so",
+    "google.sr",
+    "google.st",
+    "google.td",
+    "google.tg",
+    "google.tl",
+    "google.tm",
+    "google.tn",
+    "google.to",
+    "google.tt",
+    "google.vu",
+    "google.ws",
+    "ytimg.com",
+    "google.cat",
+    "google.dev",
+    "android.com",
+    "blogger.com",
+    "gstatic.com",
+    "youtube.com",
+    "google.co.ao",
+    "google.co.bw",
+    "google.co.ck",
+    "google.co.cr",
+    "google.co.id",
+    "google.co.il",
+    "google.co.in",
+    "google.co.jp",
+    "google.co.ke",
+    "google.co.kr",
+    "google.co.ls",
+    "google.co.ma",
+    "google.co.mz",
+    "google.co.nz",
+    "google.co.th",
+    "google.co.tz",
+    "google.co.ug",
+    "google.co.uk",
+    "google.co.uz",
+    "google.co.ve",
+    "google.co.vi",
+    "google.co.za",
+    "google.co.zm",
+    "google.co.zw",
+    "google.com.af",
+    "google.com.ag",
+    "google.com.ar",
+    "google.com.au",
+    "google.com.bd",
+    "google.com.bh",
+    "google.com.bn",
+    "google.com.bo",
+    "google.com.br",
+    "google.com.bz",
+    "google.com.co",
+    "google.com.cu",
+    "google.com.cy",
+    "google.com.do",
+    "google.com.ec",
+    "google.com.eg",
+    "google.com.et",
+    "google.com.fj",
+    "google.com.gh",
+    "google.com.gi",
+    "google.com.gt",
+    "google.com.hk",
+    "google.com.jm",
+    "google.com.kh",
+    "google.com.kw",
+    "google.com.lb",
+    "google.com.ly",
+    "google.com.mm",
+    "google.com.mt",
+    "google.com.mx",
+    "google.com.my",
+    "google.com.na",
+    "google.com.ng",
+    "google.com.ni",
+    "google.com.np",
+    "google.com.om",
+    "google.com.pa",
+    "google.com.pe",
+    "google.com.pg",
+    "google.com.ph",
+    "google.com.pk",
+    "google.com.pr",
+    "google.com.py",
+    "google.com.qa",
+    "google.com.sa",
+    "google.com.sb",
+    "google.com.sg",
+    "google.com.sl",
+    "google.com.sv",
+    "google.com.tj",
+    "google.com.tr",
+    "google.com.tw",
+    "google.com.ua",
+    "google.com.uy",
+    "google.com.vc",
+    "google.com.vn",
+    "googleapis.com",
+    "googleblog.com",
+    "googlemail.com",
+    "withgoogle.com",
+    "googlevideo.com",
+    "google-analytics.com",
+    "googleadservices.com",
+    "googletagmanager.com",
+    "youtube-nocookie.com",
+    "googlesyndication.com",
+    "googleusercontent.com"
+   ],
+   "verifiedBy": "theo Google",
+   "checkedAt": null
+  },
+  "youtube": {
+   "name": "YouTube (Google)",
+   "category": "global",
+   "official": [
+    "youtube.com",
+    "google.com",
+    "g.co",
+    "goo.gl",
+    "web.dev",
+    "youtu.be",
+    "ggpht.com",
+    "gmail.com",
+    "google.ad",
+    "google.ae",
+    "google.al",
+    "google.am",
+    "google.as",
+    "google.at",
+    "google.az",
+    "google.ba",
+    "google.be",
+    "google.bf",
+    "google.bg",
+    "google.bi",
+    "google.bj",
+    "google.bs",
+    "google.bt",
+    "google.by",
+    "google.ca",
+    "google.cd",
+    "google.cf",
+    "google.cg",
+    "google.ch",
+    "google.ci",
+    "google.cl",
+    "google.cm",
+    "google.cn",
+    "google.cv",
+    "google.cz",
+    "google.de",
+    "google.dj",
+    "google.dk",
+    "google.dm",
+    "google.dz",
+    "google.ee",
+    "google.es",
+    "google.fi",
+    "google.fm",
+    "google.fr",
+    "google.ga",
+    "google.ge",
+    "google.gg",
+    "google.gl",
+    "google.gm",
+    "google.gr",
+    "google.gy",
+    "google.hn",
+    "google.hr",
+    "google.ht",
+    "google.hu",
+    "google.ie",
+    "google.im",
+    "google.iq",
+    "google.is",
+    "google.it",
+    "google.je",
+    "google.jo",
+    "google.kg",
+    "google.ki",
+    "google.kz",
+    "google.la",
+    "google.li",
+    "google.lk",
+    "google.lt",
+    "google.lu",
+    "google.lv",
+    "google.md",
+    "google.me",
+    "google.mg",
+    "google.mk",
+    "google.ml",
+    "google.mn",
+    "google.mu",
+    "google.mv",
+    "google.mw",
+    "google.ne",
+    "google.nl",
+    "google.no",
+    "google.nr",
+    "google.nu",
+    "google.pl",
+    "google.pn",
+    "google.ps",
+    "google.pt",
+    "google.ro",
+    "google.rs",
+    "google.ru",
+    "google.rw",
+    "google.sc",
+    "google.se",
+    "google.sh",
+    "google.si",
+    "google.sk",
+    "google.sm",
+    "google.sn",
+    "google.so",
+    "google.sr",
+    "google.st",
+    "google.td",
+    "google.tg",
+    "google.tl",
+    "google.tm",
+    "google.tn",
+    "google.to",
+    "google.tt",
+    "google.vu",
+    "google.ws",
+    "ytimg.com",
+    "google.cat",
+    "google.dev",
+    "android.com",
+    "blogger.com",
+    "gstatic.com",
+    "google.co.ao",
+    "google.co.bw",
+    "google.co.ck",
+    "google.co.cr",
+    "google.co.id",
+    "google.co.il",
+    "google.co.in",
+    "google.co.jp",
+    "google.co.ke",
+    "google.co.kr",
+    "google.co.ls",
+    "google.co.ma",
+    "google.co.mz",
+    "google.co.nz",
+    "google.co.th",
+    "google.co.tz",
+    "google.co.ug",
+    "google.co.uk",
+    "google.co.uz",
+    "google.co.ve",
+    "google.co.vi",
+    "google.co.za",
+    "google.co.zm",
+    "google.co.zw",
+    "google.com.af",
+    "google.com.ag",
+    "google.com.ar",
+    "google.com.au",
+    "google.com.bd",
+    "google.com.bh",
+    "google.com.bn",
+    "google.com.bo",
+    "google.com.br",
+    "google.com.bz",
+    "google.com.co",
+    "google.com.cu",
+    "google.com.cy",
+    "google.com.do",
+    "google.com.ec",
+    "google.com.eg",
+    "google.com.et",
+    "google.com.fj",
+    "google.com.gh",
+    "google.com.gi",
+    "google.com.gt",
+    "google.com.hk",
+    "google.com.jm",
+    "google.com.kh",
+    "google.com.kw",
+    "google.com.lb",
+    "google.com.ly",
+    "google.com.mm",
+    "google.com.mt",
+    "google.com.mx",
+    "google.com.my",
+    "google.com.na",
+    "google.com.ng",
+    "google.com.ni",
+    "google.com.np",
+    "google.com.om",
+    "google.com.pa",
+    "google.com.pe",
+    "google.com.pg",
+    "google.com.ph",
+    "google.com.pk",
+    "google.com.pr",
+    "google.com.py",
+    "google.com.qa",
+    "google.com.sa",
+    "google.com.sb",
+    "google.com.sg",
+    "google.com.sl",
+    "google.com.sv",
+    "google.com.tj",
+    "google.com.tr",
+    "google.com.tw",
+    "google.com.ua",
+    "google.com.uy",
+    "google.com.vc",
+    "google.com.vn",
+    "googleapis.com",
+    "googleblog.com",
+    "googlemail.com",
+    "withgoogle.com",
+    "googlevideo.com",
+    "google-analytics.com",
+    "googleadservices.com",
+    "googletagmanager.com",
+    "youtube-nocookie.com",
+    "googlesyndication.com",
+    "googleusercontent.com"
+   ],
+   "verifiedBy": "theo Google",
+   "checkedAt": null
+  },
+  "microsoft": {
+   "name": "Microsoft",
+   "category": "global",
+   "official": [
+    "microsoft.com",
+    "microsoft.net",
+    "aka.ms",
+    "msn.com",
+    "bing.com",
+    "live.com",
+    "live.net",
+    "xbox.com",
+    "azure.com",
+    "azure.net",
+    "skype.com",
+    "github.com",
+    "msauth.net",
+    "msecnd.net",
+    "msedge.net",
+    "office.com",
+    "office.net",
+    "outlook.com",
+    "windows.com",
+    "linkedin.com",
+    "msftauth.net",
+    "onedrive.com",
+    "office365.com",
+    "sharepoint.com",
+    "cloud.microsoft",
+    "microsoft365.com",
+    "visualstudio.com",
+    "windowsupdate.com",
+    "microsoftstore.com",
+    "microsoftonline.com",
+    "microsoftonline-p.com"
+   ],
+   "verifiedBy": "tự tổng hợp (tham khảo Microsoft 365 endpoints)",
+   "checkedAt": null,
+   "aliases": [
+    "msft"
+   ]
+  },
+  "outlook": {
+   "name": "Outlook (Microsoft)",
+   "category": "global",
+   "official": [
+    "outlook.com",
+    "aka.ms",
+    "msn.com",
+    "bing.com",
+    "live.com",
+    "live.net",
+    "xbox.com",
+    "azure.com",
+    "azure.net",
+    "skype.com",
+    "github.com",
+    "msauth.net",
+    "msecnd.net",
+    "msedge.net",
+    "office.com",
+    "office.net",
+    "windows.com",
+    "linkedin.com",
+    "msftauth.net",
+    "onedrive.com",
+    "microsoft.com",
+    "microsoft.net",
+    "office365.com",
+    "sharepoint.com",
+    "cloud.microsoft",
+    "microsoft365.com",
+    "visualstudio.com",
+    "windowsupdate.com",
+    "microsoftstore.com",
+    "microsoftonline.com",
+    "microsoftonline-p.com"
+   ],
+   "verifiedBy": "theo Microsoft",
+   "checkedAt": null,
+   "strict": true
+  },
+  "office365": {
+   "name": "Microsoft 365",
+   "category": "global",
+   "official": [
+    "office365.com",
+    "aka.ms",
+    "msn.com",
+    "bing.com",
+    "live.com",
+    "live.net",
+    "xbox.com",
+    "azure.com",
+    "azure.net",
+    "skype.com",
+    "github.com",
+    "msauth.net",
+    "msecnd.net",
+    "msedge.net",
+    "office.com",
+    "office.net",
+    "outlook.com",
+    "windows.com",
+    "linkedin.com",
+    "msftauth.net",
+    "onedrive.com",
+    "microsoft.com",
+    "microsoft.net",
+    "sharepoint.com",
+    "cloud.microsoft",
+    "microsoft365.com",
+    "visualstudio.com",
+    "windowsupdate.com",
+    "microsoftstore.com",
+    "microsoftonline.com",
+    "microsoftonline-p.com"
+   ],
+   "verifiedBy": "theo Microsoft",
+   "checkedAt": null,
+   "aliases": [
+    "microsoft365"
+   ]
+  },
+  "onedrive": {
+   "name": "OneDrive (Microsoft)",
+   "category": "global",
+   "official": [
+    "onedrive.com",
+    "aka.ms",
+    "msn.com",
+    "bing.com",
+    "live.com",
+    "live.net",
+    "xbox.com",
+    "azure.com",
+    "azure.net",
+    "skype.com",
+    "github.com",
+    "msauth.net",
+    "msecnd.net",
+    "msedge.net",
+    "office.com",
+    "office.net",
+    "outlook.com",
+    "windows.com",
+    "linkedin.com",
+    "msftauth.net",
+    "microsoft.com",
+    "microsoft.net",
+    "office365.com",
+    "sharepoint.com",
+    "cloud.microsoft",
+    "microsoft365.com",
+    "visualstudio.com",
+    "windowsupdate.com",
+    "microsoftstore.com",
+    "microsoftonline.com",
+    "microsoftonline-p.com"
+   ],
+   "verifiedBy": "theo Microsoft",
+   "checkedAt": null
+  },
+  "apple": {
+   "name": "Apple",
+   "category": "global",
+   "official": [
+    "apple.com",
+    "apple.co",
+    "me.com",
+    "icloud.com",
+    "mzstatic.com",
+    "apple-dns.net",
+    "cdn-apple.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true,
+   "aliases": [
+    "appleid"
+   ]
+  },
+  "icloud": {
+   "name": "iCloud (Apple)",
+   "category": "global",
+   "official": [
+    "icloud.com",
+    "apple.com",
+    "icloud-content.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "facebook": {
+   "name": "Facebook (Meta)",
+   "category": "global",
+   "official": [
+    "facebook.com",
+    "facebook.net",
+    "m.me",
+    "fb.me",
+    "ig.me",
+    "wa.me",
+    "fb.com",
+    "meta.com",
+    "fbcdn.net",
+    "fbsbx.com",
+    "oculus.com",
+    "threads.com",
+    "threads.net",
+    "whatsapp.com",
+    "whatsapp.net",
+    "instagram.com",
+    "messenger.com",
+    "workplace.com",
+    "cdninstagram.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "meta": {
+   "name": "Meta",
+   "category": "global",
+   "official": [
+    "meta.com",
+    "m.me",
+    "fb.me",
+    "ig.me",
+    "wa.me",
+    "fb.com",
+    "fbcdn.net",
+    "fbsbx.com",
+    "oculus.com",
+    "threads.com",
+    "threads.net",
+    "facebook.com",
+    "facebook.net",
+    "whatsapp.com",
+    "whatsapp.net",
+    "instagram.com",
+    "messenger.com",
+    "workplace.com",
+    "cdninstagram.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "messenger": {
+   "name": "Messenger (Meta)",
+   "category": "global",
+   "official": [
+    "messenger.com",
+    "m.me",
+    "fb.me",
+    "ig.me",
+    "wa.me",
+    "fb.com",
+    "meta.com",
+    "fbcdn.net",
+    "fbsbx.com",
+    "oculus.com",
+    "threads.com",
+    "threads.net",
+    "facebook.com",
+    "facebook.net",
+    "whatsapp.com",
+    "whatsapp.net",
+    "instagram.com",
+    "workplace.com",
+    "cdninstagram.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "instagram": {
+   "name": "Instagram (Meta)",
+   "category": "global",
+   "official": [
+    "instagram.com",
+    "m.me",
+    "fb.me",
+    "ig.me",
+    "wa.me",
+    "fb.com",
+    "meta.com",
+    "fbcdn.net",
+    "fbsbx.com",
+    "oculus.com",
+    "threads.com",
+    "threads.net",
+    "facebook.com",
+    "facebook.net",
+    "whatsapp.com",
+    "whatsapp.net",
+    "messenger.com",
+    "workplace.com",
+    "cdninstagram.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "whatsapp": {
+   "name": "WhatsApp (Meta)",
+   "category": "global",
+   "official": [
+    "whatsapp.com",
+    "whatsapp.net",
+    "m.me",
+    "fb.me",
+    "ig.me",
+    "wa.me",
+    "fb.com",
+    "meta.com",
+    "fbcdn.net",
+    "fbsbx.com",
+    "oculus.com",
+    "threads.com",
+    "threads.net",
+    "facebook.com",
+    "facebook.net",
+    "instagram.com",
+    "messenger.com",
+    "workplace.com",
+    "cdninstagram.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "zalo": {
+   "name": "Zalo",
+   "category": "global",
+   "official": [
+    "zalo.me",
+    "zadn.vn",
+    "zalopay.vn",
+    "zaloapp.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "tiktok": {
+   "name": "TikTok",
+   "category": "global",
+   "official": [
+    "tiktok.com",
+    "tiktokv.com",
+    "ibytedtos.com",
+    "tiktokcdn.com",
+    "tiktokshop.com",
+    "byteoversea.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "telegram": {
+   "name": "Telegram",
+   "category": "global",
+   "official": [
+    "telegram.me",
+    "telegram.org",
+    "t.me",
+    "telesco.pe"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "netflix": {
+   "name": "Netflix",
+   "category": "global",
+   "official": [
+    "netflix.com",
+    "netflix.net",
+    "nflxext.com",
+    "nflximg.net",
+    "nflxvideo.net"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "linkedin": {
+   "name": "LinkedIn",
+   "category": "global",
+   "official": [
+    "linkedin.com",
+    "lnkd.in",
+    "licdn.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "github": {
+   "name": "GitHub",
+   "category": "global",
+   "official": [
+    "github.com",
+    "github.io",
+    "githubusercontent.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "dropbox": {
+   "name": "Dropbox",
+   "category": "global",
+   "official": [
+    "dropbox.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "chatgpt": {
+   "name": "ChatGPT (OpenAI)",
+   "category": "global",
+   "official": [
+    "chatgpt.com",
+    "openai.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "openai": {
+   "name": "OpenAI",
+   "category": "global",
+   "official": [
+    "openai.com",
+    "chatgpt.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "canva": {
+   "name": "Canva",
+   "category": "global",
+   "official": [
+    "canva.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "discord": {
+   "name": "Discord",
+   "category": "global",
+   "official": [
+    "discord.com",
+    "discord.gg"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null,
+   "strict": true
+  },
+  "teamviewer": {
+   "name": "TeamViewer",
+   "category": "global",
+   "official": [
+    "teamviewer.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "anydesk": {
+   "name": "AnyDesk",
+   "category": "global",
+   "official": [
+    "anydesk.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "twitter": {
+   "name": "X (Twitter)",
+   "category": "global",
+   "official": [
+    "twitter.com",
+    "t.co",
+    "x.com",
+    "twimg.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  },
+  "yahoo": {
+   "name": "Yahoo",
+   "category": "global",
+   "official": [
+    "yahoo.com"
+   ],
+   "verifiedBy": "tự tổng hợp – cần đối chiếu tinnhiemmang.vn/trang chủ",
+   "checkedAt": null
+  }
+ }
+}
